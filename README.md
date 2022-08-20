@@ -28,7 +28,7 @@ But it works well with the CPU also.**
   - [Glove](#8)
   - [Fast text](#9)
   - [Word2Vec](#10)
-  - [LDA (Linear Discriminant Analysis)](#11)
+  - [LDA (Latent Dirichlet Allocation)](#11)
 - [Word embedding dictionary](#12)
 - [Clustering](#13)
   - [K-Means](#14)
@@ -52,7 +52,7 @@ But it works well with the CPU also.**
   ## <a name="8">Glove</a>
   ## <a name="9">Fast text</a>
   ## <a name="10">Word2Vec</a>
-  ## <a name="11">LDA (Linear Discriminant Analysis</a>
+  ## <a name="11">LDA (Latent Dirichlet Allocation)</a>
 # <a name="12">Word embedding dictionary</a>
 # <a name="13">Clustering</a>
   ## <a name="14">K-Means</a>
