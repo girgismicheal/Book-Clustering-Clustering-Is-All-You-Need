@@ -202,5 +202,16 @@ fast_text_vectors
 ```
 
 
+  ## <a name="10">Word2Vec</a>
+- Word2vec is a method to represent each word as a vector.
+- We used a pre-trained model “word2vec-google-news-300”.
+```Python
+import gensim.downloader as api
+word2vec_model = api.load("word2vec-google-news-300")
+word2vec_vectors = get_vectors_pretrained(data_frame,word2vec_model)
+word2vec_vectors
+```
+
+
 
 
