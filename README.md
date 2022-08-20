@@ -386,3 +386,19 @@ Training Models:
 | ![image](Image/Doc2Vec_Highest_Kappa.png) | ![image](Image/LDA_Highest_Silhouette.png) |
 
 
+
+
+  ## <a name="16">Hierarchical</a>
+> Hierarchical clustering is an algorithm that groups similar objects into groups. The endpoint is a set of clusters, where each cluster is distinct from the other cluster, and the objects within each cluster are broadly like each other.
+
+| Elbow Method                           | Silhouette Method                           | Cohen's Kappa                     |
+|----------------------------------------|---------------------------------------------|-----------------------------------|
+| ![image](Image/Hierarchical_Elbow.png) | ![image](Image/Hierarchical_Silhouette.png) | ![image](Image/Hierarchical_Kappa.png) |
+
+- Majority of the models at the Elbow graph voted for k =4.
+- Majority of the models at the Silhouette graph voted for k =5.
+- The highest Kappa score at Doc2Vev With 99.375%.
+
+**The dendrogram for the hierarchical model**
+
+![image](Image/Dendrogram.png)
