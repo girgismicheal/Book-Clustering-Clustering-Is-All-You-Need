@@ -368,3 +368,21 @@ Training Models:
 
 
 
+
+  ## <a name="15">Expectation Maximization (EM)</a>
+> EM clustering is to estimate the means and standard deviations for each cluster to maximize the likelihood of the observed data.
+> <br><br> **Important Note:** for BOW and TF_IDF we should perform PCA to decrease number of features
+
+| Silhouette Method                      | Cohen's Kappa                     |
+|----------------------------------------|-----------------------------------|
+| ![image](Image/EM_Silhouette.png) | ![image](Image/EM_Kappa.png) |
+
+- The highest Silhouette score when using LDA transformation with k =4
+- According to kappa scores, The highest Kappa score is Doc2vec with 99.6%.
+**Using PCA with the highest silhouette score to visualize clusters**
+
+| Doc2Vec (Highest Kappa Score)             | LDA (Highest Silhouette Score)             |
+|-------------------------------------------|--------------------------------------------|
+| ![image](Image/Doc2Vec_Highest_Kappa.png) | ![image](Image/LDA_Highest_Silhouette.png) |
+
+
