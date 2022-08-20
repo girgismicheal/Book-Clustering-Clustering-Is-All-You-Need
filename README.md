@@ -53,3 +53,24 @@ But it works well with the CPU also.**
 - Many problems have been found in books' content, so we should deal with them.
 
 
+
+# <a name="2">Data Preprocessing</a>
+
+**Clean the content of the books by:**
+- Removing the word capitalization, unwanted characters, white spaces, and stop words.
+- Replacing some patterns.
+- Applying lemmatization and tokenization.
+
+**The data after cleaning process**
+> delight steelkilt strain oar stiff pull harpooneer get fast spear hand radney sprang bow always furious man seem boat bandage cry beach whale topmost back nothing loath bowsman haul blinding foam blent two whiteness together till sudden boat struck sunken ledge keel spill stand mate instant fell whale slippery back boat right dash aside swell radney toss sea flank whale struck spray instant dimly see veil wildly seek remove eye moby dick whale rush round sudden maelstrom seize swimmer jaw rear high plunge headlong go meantime first tap boat bottom lakeman slacken line drop astern whirlpool calmly look thought thought
+
+**Dataset Building**
+
+![image](/Image/Screenshot_1.png)
+
+- Create a data frame containing 2 columns and 1000 rows representing the books' samples (Sample) and the book name (Label)
+
+**Note:** Before starting to transform words. We split the data into training and testing, to prevent data leakage.
+
+
+
