@@ -40,3 +40,30 @@ But it works well with the CPU also.**
   - [Word Count](#20)
 - [Conclusion](#21)
 
+
+
+# <a name="1">Data Exploration</a>
+# <a name="2">Data Preprocessing</a>
+# <a name="3">Word Embedding</a>
+  ## <a name="4">BOW</a>
+  ## <a name="5">TF-IDF</a>
+  ## <a name="6">Doc2Vec</a>
+  ## <a name="7">Bert Embedding</a>
+  ## <a name="8">Glove</a>
+  ## <a name="9">Fast text</a>
+  ## <a name="10">Word2Vec</a>
+  ## <a name="11">LDA (Linear Discriminant Analysis</a>
+# <a name="12">Word embedding dictionary</a>
+# <a name="13">Clustering</a>
+  ## <a name="14">K-Means</a>
+  ## <a name="15">Expectation Maximization (EM)</a>
+  ## <a name="16">Hierarchical</a>
+# <a name="17">Choosing Champion Model</a>
+# <a name="18">Error Analysis</a>
+  ## <a name="19">Cosine Similarity</a>
+  ## <a name="20">Word Count</a>
+# <a name="21">Conclusion</a>
+
+
+
+
