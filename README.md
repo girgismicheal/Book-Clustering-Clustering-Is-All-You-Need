@@ -326,3 +326,20 @@ text_embedding={
 
 
 
+# Mapping function
+> As clustering divides data into groups, So it should remap the clusters to the labels, in order to compare with the true label distribution.
+```Python
+def label_mapping(num, y_actual, y_target, df_labels):
+    if num == df_labels[df_labels[y_actual]==0][y_target].value_counts().idxmax():
+        return 0
+    if num == df_labels[df_labels[y_actual]==1][y_target].value_counts().idxmax():
+        return 1
+    if num == df_labels[df_labels[y_actual]==2][y_target].value_counts().idxmax():
+        return 2
+    if num == df_labels[df_labels[y_actual]==3][y_target].value_counts().idxmax():
+        return 3
+    if num ==df_labels[df_labels[y_actual]==4][y_target].value_counts().idxmax():
+        return 4
+    else :
+      return num
+```
