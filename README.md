@@ -452,3 +452,14 @@ Training Models:
 - As shown in the table above, we noticed that the true predicted samples have high cosine similarities with the correct book. So, it seems the cosine similarity is a good measure.
 
 
+
+
+  ## <a name="20">Word Count</a>
+**Compare the most frequent word (Wrongly classified sample, wrong boog, and correct book)**
+
+| Sample 1                         | Sample 2                         | Sample 3                         |
+|----------------------------------|----------------------------------|----------------------------------|
+| ![image](Image/Screenshot_1.png) | ![image](Image/Screenshot_2.png) | ![image](Image/Screenshot_3.png) |
+
+- From the 3 tables above, the more the 'diff' column has negative values the more likely the model goes for the wrong prediction.
+
