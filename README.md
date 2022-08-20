@@ -191,6 +191,15 @@ glove_vectors
 
 
 
+  ## <a name="9">Fast text</a>
+- FastText is a library for learning word embeddings and text classification. The model allows one to create unsupervised learning or supervised learning algorithms for obtaining vector representations for words.
+- We loaded a pre-trained model from genism API ‘fasttext-wiki-news-subwords-300’.
+```Python
+import gensim.downloader as api
+fast_text_model = api.load("fasttext-wiki-news-subwords-300")  # load glove vectors
+fast_text_vectors=get_vectors_pretrained(data_frame,fast_text_model)
+fast_text_vectors
+```
 
 
 
