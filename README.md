@@ -157,3 +157,26 @@ Bert can be used as a word embedding pretrained model and then use these embedde
 
 
 
+## Helper Function
+  This help function build to pass the data through the models Glove, Fast-text, and Word2vec model and return the embedding vectors.
+```Python
+def get_vectors_pretrained(df, model):
+    embedding_vectors = []
+    for partition in df['Sample of the book']:
+        sentence = []
+        for word in partition.split(' '):
+            try:
+                sentence.append(model[word])
+            except:
+                pass
+        sentence = np.array(sentence)
+        sentence = sentence.mean(axis=0)
+        embedding_vectors.append(sentence)
+    embedding_vectors = np.array(embedding_vectors)
+    return embedding_vectors
+```
+
+
+
+
+
