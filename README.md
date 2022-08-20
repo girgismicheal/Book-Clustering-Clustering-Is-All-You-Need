@@ -311,3 +311,18 @@ text_embedding={
 }
 ```
 - File name is ""Embedding_Vectors_Clustering.pkl"
+
+
+
+
+# Word embedding visualization
+
+| BOW                              | TF-IDF-Uni                         | Bert                                   | LDA                        |
+|----------------------------------|------------------------------------|----------------------------------------|---------------------------|
+| ![image](Image/BOW.png)          | ![image](Image/TF-IDF-Uni.png)     | ![image](Image/Bert.png)               | ![image](Image/LDA.png)   |
+| Word2Vec                         | Doc2Vec                            | FastText                               | Glove                        |
+| ![image](Image/Word2Vec.png)     | ![image](Image/Doc2Vec.png)        | ![image](Image/FastText.png)           | ![image](Image/Glove.png) |
+- The Doc2Vec seems the most separable one.
+
+
+
