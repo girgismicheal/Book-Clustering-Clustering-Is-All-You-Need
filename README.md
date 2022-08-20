@@ -343,3 +343,12 @@ def label_mapping(num, y_actual, y_target, df_labels):
     else :
       return num
 ```
+
+
+
+
+# <a name="13">Clustering</a>
+Training Models:
+> - Kmeans is an unsupervised machine learning algorithm in which each observation belongs to the cluster with the nearest mean.
+> - Expectation Maximization (EM) clustering is to estimate the means and standard deviations for each cluster to maximize the likelihood of the observed data.
+
