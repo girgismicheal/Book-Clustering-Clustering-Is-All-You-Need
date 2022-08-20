@@ -351,4 +351,20 @@ def label_mapping(num, y_actual, y_target, df_labels):
 Training Models:
 > - Kmeans is an unsupervised machine learning algorithm in which each observation belongs to the cluster with the nearest mean.
 > - Expectation Maximization (EM) clustering is to estimate the means and standard deviations for each cluster to maximize the likelihood of the observed data.
+> - Hierarchical clustering is an algorithm that groups similar objects into groups. The endpoint is a set of clusters, where each cluster is distinct from the other cluster, and the objects within each cluster are broadly like each other.
+> - As we have 8 embedding methods and 3 clustering models. So, we have 24 models for all our transformation methods.
+
+
+  ## <a name="14">K-Means</a>
+> K-means is an unsupervised machine learning algorithm in which each observation belongs to the cluster with the nearest mean.
+
+| Elbow Method                      |  Silhouette Method                     | Cohen's Kappa at k =5             |
+|-----------------------------------|----------------------------------------|-----------------------------------|
+| ![image](Image/K-Means_Elbow.png) | ![image](Image/K-means_Silhouette.png) | ![image](Image/K-means_kappa.png) 
+
+- The elbow graphs vote for 5 clusters
+- As shown in the above graphs that TFIDF, Glove, Bert, Doc2Vec, and LDA vectorizers divide these books into 5 clusters, besides LDA vectorizer has the highest silhouette score.
+- The highest Cohen's Kappa score at k =5 is the Doc2Vec with 99.375%.
+
+
 
