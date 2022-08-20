@@ -215,3 +215,81 @@ word2vec_vectors
 
 
 
+
+  ## <a name="11">LDA (Latent Dirichlet Allocation)</a>
+- It is a generative statistical model that explains a set of observations through unobserved groups, and each group explains why some parts of the data are similar. LDA is an example of a topic model.
+- We used LDA as a transformer after vectorization used in BOW because LDA can’t vectorize words. So, we needed to use it after BOW.
+```Python
+from gensim.corpora import Dictionary
+from gensim.models import LdaModel
+import matplotlib.pyplot as plt
+import gensim
+
+paragraphs = data_frame["Sample of the book"].to_list()
+docs = []
+
+for sen in paragraphs:
+    docs.append(list(sen.split()))
+print(len(docs))
+
+# Create a dictionary representation of the documents.
+dictionary = Dictionary(docs)
+
+# Filter out words that occur less than 20 documents, or more than 50% of the documents.
+dictionary.filter_extremes(no_below=20, no_above=0.8)
+
+# Bag-of-words representation of the documents.
+corpus = [dictionary.doc2bow(doc) for doc in docs]
+print(len(corpus[2]))
+print('Number of unique tokens: %d' % len(dictionary))
+print('Number of documents: %d' % len(corpus))
+
+# Set training parameters.
+num_topics = 5
+chunksize = 2000
+passes = 20
+iterations = 400
+eval_every = None  # Don't evaluate model perplexity, takes too much time.
+
+# Make a index to word dictionary.
+temp = dictionary[0]  # This is only to "load" the dictionary.
+id2word = dictionary.id2token
+#print(len(dictionary))
+model = LdaModel(
+    corpus=corpus,
+    id2word=id2word,
+    chunksize=chunksize,
+    alpha='auto',
+    eta='auto',
+    iterations=iterations,
+    num_topics=num_topics,
+    passes=passes,
+    eval_every=eval_every
+)
+
+top_topics = model.top_topics(corpus) #, num_words=20)
+
+# Average topic coherence is the sum of topic coherences of all topics, divided by the number of topics.
+avg_topic_coherence = sum([t[1] for t in top_topics]) / num_topics
+print('Average topic coherence: %.4f.' % avg_topic_coherence)
+
+all_topics = model.get_document_topics(corpus)
+num_docs = len(all_topics)
+
+all_topics_csr = gensim.matutils.corpus2csc(all_topics)
+lda_to_cluster = all_topics_csr.T.toarray()
+lda_to_cluster.shape
+```
+**Measure the coherence per topic of the LDA model**
+```Python
+from gensim.models.coherencemodel import CoherenceModel
+## Evaluating coherence of gensim LDA model
+cm = CoherenceModel(model=model, corpus=corpus, coherence='u_mass')
+coherence_score = cm.get_coherence()
+print(f"The coherence score = {coherence_score}")
+```
+> The output: "  The coherence score = -1.1595543844375444  "
+
+
+
+
