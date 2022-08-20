@@ -402,3 +402,17 @@ Training Models:
 **The dendrogram for the hierarchical model**
 
 ![image](Image/Dendrogram.png)
+
+
+
+
+
+# <a name="17">Choosing Champion Model</a>
+![image](image)
+
+# <a name="18">Error Analysis</a>
+**Analyzed the error using 2 methods:**
+- Cosine similarity 
+- Word count
+
+
