@@ -40,3 +40,16 @@ But it works well with the CPU also.**
   - [Cosine Similarity](#19)
   - [Word Count](#20)
 - [Conclusion](#21)
+
+
+
+
+
+# <a name="1">Data Exploration</a>
+**By discovering the books’ content as shown below:**
+
+> Sense and Sensibility by Jane Austen 1811]\n\nCHAPTER 1\n\n\nThe family of Dashwood had long been settled in Sussex.\nTheir estate was large, and their residence was at Norland Park,\nin the centre of their property, where, for many generations,\nthey had lived in so respectable a manner as to engage\nthe general good opinion of their surrounding acquaintance.\nThe late owner of this estate was a single man, who lived\nto a very advanced age, and who for many years of his life,\nhad a constant companion.
+
+- Many problems have been found in books' content, so we should deal with them.
+
+
