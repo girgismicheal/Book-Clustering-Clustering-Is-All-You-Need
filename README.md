@@ -463,3 +463,10 @@ Training Models:
 
 - From the 3 tables above, the more the 'diff' column has negative values the more likely the model goes for the wrong prediction.
 
+
+
+# <a name="21">Conclusion</a>
+
+> After cleaning and preprocessing, we used 8 different transformation methods to apply text clustering. Then, we applied 3 different clustering algorithms to these 8 methods. This resulted in 24 models to evaluate the best transformation method that can work with clustering in our case. As shown in the report, Doc2Vec performed better with all the 3 algorithms. After comparing these 3 models on Doc2Vec, we found that EM with Doc2Vec is the champion model. After this, we performed error analysis using cosine similarity and the most frequent words in the mislabeled documents. And the result shows that most of the mislabeled documents have words that are more frequent in the prediction, not the actual labels.
+
+
