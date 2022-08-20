@@ -74,3 +74,23 @@ But it works well with the CPU also.**
 
 
 
+
+# <a name="3">Word Embedding</a>
+It is one of the trivial steps to be followed for a better understanding of the context of what we are dealing with. After the initial text is cleaned and normalized, we need to transform it into its features to be used for modeling.
+
+We used some methods to assign weights to particular words, sentences, or documents within our data before modeling them. We go for numerical representation for individual words as it’s easy for the computer to process numbers.
+
+  ## <a name="4">BOW</a>
+A bag of words is a representation of text that describes the occurrence of words within a document, that just keeps track of word counts and disregards the grammatical details and the word order. As we said that we split the data. So, we applied BOW to training and testing data. So, it transforms each sentence into an array of occurrences in this sentence.
+```Python
+from sklearn.feature_extraction.text import CountVectorizer
+
+BOW = CountVectorizer()
+BOW_transformation = BOW.fit_transform(data_frame['Sample of the book'])
+```
+
+
+
+
+
+
