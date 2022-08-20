@@ -293,3 +293,21 @@ print(f"The coherence score = {coherence_score}")
 
 
 
+# <a name="12">Word embedding dictionary</a>
+> Saved the word Embedding as a pickle file 
+for future use, the embedding takes a long time. So, if you want to start directly with the embedded data that has been computed previously.
+> 
+The file dictionary:
+```Python
+text_embedding={
+    'BOW':BOW_transformation.toarray(),
+    'TF_IDF 1_gram':tfidf_1g_transformation.toarray(),
+    'Doc2vec':np.array(doc2vec_vectors),
+    'Glove':glove_vectors,
+    'FastText':fast_text_vectors,
+    'Word2vec':word2vec_vectors,
+    'BERT':bert_vectors,
+    'LDA':lda_to_cluster,
+}
+```
+- File name is ""Embedding_Vectors_Clustering.pkl"
