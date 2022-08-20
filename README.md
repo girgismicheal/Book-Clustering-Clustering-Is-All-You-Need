@@ -91,6 +91,32 @@ BOW_transformation = BOW.fit_transform(data_frame['Sample of the book'])
 
 
 
+## <a name="5">TF-IDF</a>
+
+  TF-IDF (term frequency-inverse document frequency) is a statistical measure that evaluates how relevant a word is to a document in a collection of documents. This is done by multiplying two metrics: how many times a word appears in a document, and the inverse document frequency of the word across a set of documents.
+  <br><br>In addition, to understand the relation between each consecutive pair of words, tfidf with bigram has applied. Furthermore, we applied tfidf with trigram to find out wether there is a relation between each consecutive three words.
+- In the project, used Uni-gram and Bi-gram
+
+```Python
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+def tfidf_ngram(n_gram,X_train=data_frame['Sample of the book']):
+    vectorizer = TfidfVectorizer(ngram_range=(n_gram,n_gram))
+    x_train_vec = vectorizer.fit_transform(X_train)
+    return x_train_vec
+
+# Uni-Gram
+tfidf_1g_transformation= tfidf_ngram(1,X_train=data_frame['Sample of the book'])
+
+# Bi-Gram
+tfidf_2g_transformation= tfidf_ngram(2,X_train=data_frame['Sample of the book'])
+```
+
+
+
+
+
 
 
 
