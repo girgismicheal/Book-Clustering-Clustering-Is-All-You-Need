@@ -416,3 +416,39 @@ Training Models:
 - Word count
 
 
+
+
+  ## <a name="19">Cosine Similarity</a>
+> - Calculated the mean of the actual and predicted books as a vector of 50x1
+> - Calculated cosine similarity between the correct book and the wrong classified sample.
+> - Calculated cosine similarity between the wrong book and the wrong classified sample.
+> - Compare the similarity
+
+| y\_actual | y\_pred | samples                                            | Wrong Similarity | Correct Similarity | 279 | 670 | 795 | 894 |
+| --------- | ------- | -------------------------------------------------- | ---------------- | ------------------ | --- | --- | --- | --- |
+| 3         | 1       | \[-2.8776827, 2.4143455, 0.76265615, -2.0152254... | 0.436951         | 0.292536           |
+| 3         | 2       | \[-1.1176921, -2.7626338, -1.1571447, 2.9436908... | 0.475420         | 0.482412           |
+| 3         | 2       | \[-0.5265854, 0.03849755, 1.1873016, -0.4836036... | 0.458539         | 0.448146           |
+| 3         | 2       | \[2.5617168, -1.2105867, -0.49955735, -0.030986... | 0.436337         | 0.412226           |
+
+- This shows that the similarity between book representation and the wrong predicted labels is larger than the actual labels. This gives us an intuition why the machine fails to predict it.
+
+<br><br>
+**The cosine similarity of true predicted samples:**
+
+| y\_actual | y\_pred | samples                                            | Correct Similarity |
+| --------- | ------- | -------------------------------------------------- | ------------------ |
+| 3         | 3       | \[-4.0165887, -0.63549626, 1.065653, 1.354315, ... | 0.608253           |
+| 3         | 3       | \[0.6267197, -1.6910952, 2.6348324, 0.7030123, ... | 0.712028           |
+| 3         | 3       | \[-0.8567596, -1.1851995, 5.325168, 0.41880223,... | 0.593198           |
+| 4         | 4       | \[0.17613477, 3.2651155, -1.2459348, 0.28729615... | 0.652162           |
+| ...       | ...     | ...                                                | ...                |
+| 0         | 0       | \[-2.0451612, -1.1069009, -1.1952142, 1.3637913... | 0.688195           |
+| 1         | 1       | \[0.47947362, -1.4962513, -2.1788685, -0.068233... | 0.715102           |
+| 2         | 2       | \[-0.9296994, -1.6407075, 3.4332736, -2.1189377... | 0.715852           |
+| 4         | 4       | \[-0.33003226, 1.2208394, -3.288266, -0.5106734... | 0.583277           |
+| 0         | 0       | \[-0.42023003, -0.08335679, 0.14349967, 0.59380... | 0.758161           |
+
+- As shown in the table above, we noticed that the true predicted samples have high cosine similarities with the correct book. So, it seems the cosine similarity is a good measure.
+
+
