@@ -1,15 +1,20 @@
 # Book-Clustering-Clustering-Is-All-You-Need
 
 
-# Gutenberg
+# Gutenberg Project Overview
 **Project Gutenberg is a library of over 60,000 free eBooks**
 
 ![Gutenberg](https://drive.google.com/uc?export=view&id=1bOd8Hiv-sU8Skj1gYR-2cxLUEBIretyZ)
 
 
-**Recommended to use GPU to run much faster.
-But it works well with the CPU also.**
+In this project, we selected some books from the Gutenburg library from different categories and then select random paragraphs from them and labeled these paragraphs by the book name for ground truth. After creating the dataset we used many transformation algorithms to embed the text to numbers for the modeling processes like (Fast-text,BERT, TF_IDF, BOW, Skip gram,Glove,LDA,Word2Vec, Doc2Vec)
+<br><br>
+After this, we tried many clustering algorithms like(K-means, Expected-maximization(EM), and Hierarchical) and chose the champion one which achieved the kappa and silhouette score.
+
+**Recommended using GPU to compile the code much faster.
+But it works well for CPU too.**
 - GPU takes around 40 min, while CPU may take hours.
+
 
 
 
@@ -76,12 +81,12 @@ But it works well with the CPU also.**
 
 
 # <a name="3">Word Embedding</a>
-It is one of the trivial steps to be followed for a better understanding of the context of what we are dealing with. After the initial text is cleaned and normalized, we need to transform it into its features to be used for modeling.
+It is one of the trivial steps to be followed for a better understanding of the context of what we are dealing with. After the initial text is cleaned and normalized, we need to transform it into features to be used for modeling.
 
 We used some methods to assign weights to particular words, sentences, or documents within our data before modeling them. We go for numerical representation for individual words as it’s easy for the computer to process numbers.
 
   ## <a name="4">BOW</a>
-A bag of words is a representation of text that describes the occurrence of words within a document, that just keeps track of word counts and disregards the grammatical details and the word order. As we said that we split the data. So, we applied BOW to training and testing data. So, it transforms each sentence into an array of occurrences in this sentence.
+A bag of words is a representation of text that describes the occurrence of words within a document, just keeps track of word counts and disregards the grammatical details and the word order. As we said that we split the data. So, we applied BOW to training and testing data. So, it transforms each sentence into an array of occurrences in this sentence.
 ```Python
 from sklearn.feature_extraction.text import CountVectorizer
 
@@ -94,7 +99,7 @@ BOW_transformation = BOW.fit_transform(data_frame['Sample of the book'])
 ## <a name="5">TF-IDF</a>
 
   TF-IDF (term frequency-inverse document frequency) is a statistical measure that evaluates how relevant a word is to a document in a collection of documents. This is done by multiplying two metrics: how many times a word appears in a document, and the inverse document frequency of the word across a set of documents.
-  <br><br>In addition, to understand the relation between each consecutive pair of words, tfidf with bigram has applied. Furthermore, we applied tfidf with trigram to find out wether there is a relation between each consecutive three words.
+  <br><br>In addition, to understand the relation between each consecutive pair of words, tfidf with bi-gram has applied. Furthermore, we applied tfidf with trigram to find out whether there is a relation between each consecutive three words.
 - In the project, used Uni-gram and Bi-gram
 
 ```Python
@@ -180,7 +185,7 @@ def get_vectors_pretrained(df, model):
 
   ## <a name="8">Glove</a>
 - Global vector for word representation is an unsupervised learning algorithm for word embedding.
-- We trained a GloVe model on books’ data, that represents each word in a 300x1 Vector. We took the data frame after cleaning and get each paragraph and passed it to the corpus. After that,t we trained the model on each word.
+- We trained a GloVe model on books’ data, that represents each word in a 300x1 Vector. We took the data frame after cleaning and get each paragraph and passed it to the corpus. After that, we trained the model on each word.
 - We used also a pre-trained model “glove-wiki-gigaword-300”. Each word is represented by a 300x1 vector. Then, on each word of a sentence in the data frame, we replaced it with its vector representation.
 ```Python
 import gensim.downloader as api
