@@ -4,7 +4,7 @@
 # Gutenberg Project Overview
 **Project Gutenberg is a library of over 60,000 free eBooks**
 
-![Gutenberg](https://drive.google.com/uc?export=view&id=1bOd8Hiv-sU8Skj1gYR-2cxLUEBIretyZ)
+![Gutenberg](Image/Gutenberg-Text-Clustering.png)
 
 
 In this project, we selected some books from the Gutenburg library from different categories and then select random paragraphs from them and labeled these paragraphs by the book name for ground truth. After creating the dataset we used many transformation algorithms to embed the text to numbers for the modeling processes like (Fast-text,BERT, TF_IDF, BOW, Skip gram,Glove,LDA,Word2Vec, Doc2Vec)
@@ -20,7 +20,7 @@ But it works well for CPU too.**
 
 # Project Methodology
 
-![Gutenberg](https://drive.google.com/uc?export=view&id=1wNirZx5kEzvy5tPnS2pCaP2xX0ugpx5N)
+![Gutenberg](Image/Gutenberg_Clustering.drawio.png)
 
 # Project Main Steps
 
@@ -71,7 +71,7 @@ But it works well for CPU too.**
 
 **Dataset Building**
 
-![image](/Image/Screenshot_1.png)
+![image](/Image/Data_building.png)
 
 - Create a data frame containing 2 columns and 1000 rows representing the books' samples (Sample) and the book name (Label)
 
@@ -322,11 +322,21 @@ text_embedding={
 
 # Word embedding visualization
 
-| BOW                              | TF-IDF-Uni                         | Bert                                   | LDA                        |
-|----------------------------------|------------------------------------|----------------------------------------|---------------------------|
-| ![image](Image/BOW.png)          | ![image](Image/TF-IDF-Uni.png)     | ![image](Image/Bert.png)               | ![image](Image/LDA.png)   |
-| Word2Vec                         | Doc2Vec                            | FastText                               | Glove                        |
-| ![image](Image/Word2Vec.png)     | ![image](Image/Doc2Vec.png)        | ![image](Image/FastText.png)           | ![image](Image/Glove.png) |
+| BOW                                        | TF-IDF-Uni                       | 
+|--------------------------------------------|----------------------------------|
+| ![image](Image/BOW.png)                    | ![image](Image/TF-IDF-Uni.png)   |
+
+| Word2Vec                                   | Doc2Vec                          |
+| ----------------------------------------   | -------------------------------  |
+| ![image](Image/Word2Vec.png)               | ![image](Image/Doc2Vec.png)      |
+
+| Bert                                       | LDA                              |
+| ----------------------------------------   | -------------------------------  |
+| ![image](Image/Bert.png)                   | ![image](Image/LDA.png)          |
+
+| FastText                                   | Glove                            |
+| ----------------------------------------   | -------------------------------  |
+| ![image](Image/FastText.png)               | ![image](Image/Glove.png)        |
 - The Doc2Vec seems the most separable one.
 
 
@@ -413,7 +423,11 @@ Training Models:
 
 
 # <a name="17">Choosing Champion Model</a>
-![image](image)
+As Doc2Vec achieved the best scores in all the models. we applied the three models with doc2vec to choose the champion model
+
+![image](Image/Champion_compre.png)
+
+- From the above figure, Doc2Vec with the EM cluster has the best score among all clusters.
 
 # <a name="18">Error Analysis</a>
 **Analyzed the error using 2 methods:**
